@@ -96,7 +96,7 @@ public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.ViewHo
                     AdUtils.showInterAd(activity, intent);
                 } else {
                     AdUtils.adCounter++;
-                    AdUtils.showFbInterAd(activity, intent);
+                    AdUtils.loadFbInterAd(activity, intent);
                 }
 
         }
