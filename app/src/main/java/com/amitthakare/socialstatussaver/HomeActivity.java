@@ -53,6 +53,8 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        SharedPref.checkAdType(this);
+
         init();
 
         handleNotificationData();
@@ -64,10 +66,13 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
             AdUtils.initAd(HomeActivity.this);
             AdUtils.loadBannerAd(HomeActivity.this, adContainer);
             AdUtils.loadInterAd(HomeActivity.this);
+            Log.e("Test","admob");
         } else {
             //Fb banner Ads
+            AdUtils.initFbAd(HomeActivity.this);
             AdUtils.fbBannerAd(HomeActivity.this, adContainer);
-            AdUtils.loadFbInterAd(HomeActivity.this);
+            //AdUtils.loadFbInterAd(HomeActivity.this);
+            Log.e("Test","fb");
         }
 
 
@@ -218,7 +223,8 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
             AdUtils.showInterAd(HomeActivity.this, intent);
         } else {
             AdUtils.adCounter++;
-            AdUtils.showFbInterAd(HomeActivity.this, intent);
+            AdUtils.loadFbInterAd(HomeActivity.this,intent);
+            //AdUtils.showFbInterAd(HomeActivity.this, intent);
         }
     }
 

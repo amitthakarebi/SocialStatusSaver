@@ -10,13 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.amitthakare.socialstatussaver.PreviewActivity;
 import com.amitthakare.socialstatussaver.R;
 import com.amitthakare.socialstatussaver.model.DataModel;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.Utils;
 
 import java.io.File;

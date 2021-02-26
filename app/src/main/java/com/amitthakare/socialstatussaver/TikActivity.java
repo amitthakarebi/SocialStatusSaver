@@ -19,8 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.amitthakare.socialstatussaver.utils.AdUtils;
+import com.bumptech.glide.Glide;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 import com.amitthakare.socialstatussaver.utils.Utils;
 

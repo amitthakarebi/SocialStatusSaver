@@ -12,10 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.bumptech.glide.Glide;
 import com.amitthakare.socialstatussaver.callapi.CommonClassForAPI;
 import com.amitthakare.socialstatussaver.model.TwitterResponse;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 import com.amitthakare.socialstatussaver.utils.Utils;
 

@@ -4,6 +4,8 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +19,6 @@ import android.widget.Toast;
 
 import com.amitthakare.socialstatussaver.adapter.MainPagerAdapter;
 import com.amitthakare.socialstatussaver.fragment.WAppStatusFrag;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 import com.google.android.gms.ads.AdView;
 
@@ -102,14 +103,14 @@ public class WAppActivity extends AppCompatActivity implements View.OnClickListe
 
 
         LinearLayout adContainer = findViewById(R.id.banner_container);
-            if (!AdUtils.isloadFbAd) {
-                //admob
-                AdUtils.initAd(WAppActivity.this);
-                AdUtils.loadBannerAd(WAppActivity.this, adContainer);
-            } else {
-                //Fb banner Ads
-                AdUtils.fbBannerAd(WAppActivity.this, adContainer);
-            }
+        if (!AdUtils.isloadFbAd) {
+            //admob
+            AdUtils.initAd(WAppActivity.this);
+            AdUtils.loadBannerAd(WAppActivity.this, adContainer);
+        } else {
+            //Fb banner Ads
+            AdUtils.fbBannerAd(WAppActivity.this, adContainer);
+        }
 
     }
 

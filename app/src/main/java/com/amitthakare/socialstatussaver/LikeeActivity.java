@@ -10,9 +10,11 @@ import android.util.Log;
 import android.util.Patterns;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.bumptech.glide.Glide;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 import com.amitthakare.socialstatussaver.utils.Utils;
@@ -105,6 +107,16 @@ public class LikeeActivity extends Activity {
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         progressDialog.setMessage("Downloading....");
         progressDialog.setCancelable(false);
+
+        LinearLayout adContainer = findViewById(R.id.banner_container);
+        if (!AdUtils.isloadFbAd) {
+            //admob
+            AdUtils.initAd(LikeeActivity.this);
+            AdUtils.loadBannerAd(LikeeActivity.this, adContainer);
+        } else {
+            //Fb banner Ads
+            AdUtils.fbBannerAd(LikeeActivity.this, adContainer);
+        }
     }
 
     private void GetLikeeData() {

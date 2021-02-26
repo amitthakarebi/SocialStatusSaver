@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.amitthakare.socialstatussaver.adapter.WAPagerAdapter;
 import com.amitthakare.socialstatussaver.fragment.WAStatusFragment;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 import com.google.android.gms.ads.AdView;
 
@@ -95,16 +96,15 @@ public class WABusiActivity extends AppCompatActivity implements View.OnClickLis
 
         waBusiBtn = findViewById(R.id.waBusiBtn);
         waBusiBtn.setOnClickListener(this);
-
         LinearLayout adContainer = findViewById(R.id.banner_container);
-            if (!AdUtils.isloadFbAd) {
-                //admob
-                AdUtils.initAd(WABusiActivity.this);
-                AdUtils.loadBannerAd(WABusiActivity.this, adContainer);
-            } else {
-                //Fb banner Ads
-                AdUtils.fbBannerAd(WABusiActivity.this, adContainer);
-            }
+        if (!AdUtils.isloadFbAd) {
+            //admob
+            AdUtils.initAd(WABusiActivity.this);
+            AdUtils.loadBannerAd(WABusiActivity.this, adContainer);
+        } else {
+            //Fb banner Ads
+            AdUtils.fbBannerAd(WABusiActivity.this, adContainer);
+        }
     }
 
     @Override

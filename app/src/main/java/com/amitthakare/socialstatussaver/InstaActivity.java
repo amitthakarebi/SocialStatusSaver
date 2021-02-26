@@ -16,9 +16,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.bumptech.glide.Glide;
 import com.amitthakare.socialstatussaver.service.InstaFetch;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 import com.amitthakare.socialstatussaver.utils.SharePrefs;
 

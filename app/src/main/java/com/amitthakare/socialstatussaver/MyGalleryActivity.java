@@ -1,5 +1,6 @@
 package com.amitthakare.socialstatussaver;
 
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amitthakare.socialstatussaver.adapter.GalleryPagerAdapter;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 
 public class MyGalleryActivity extends AppCompatActivity {
@@ -98,7 +98,8 @@ public class MyGalleryActivity extends AppCompatActivity {
         } else {
             //Fb banner Ads
             AdUtils.fbBannerAd(MyGalleryActivity.this, adContainer);
-            AdUtils.loadFbInterAd(MyGalleryActivity.this);
+            //AdUtils.loadFbInterAd(MyGalleryActivity.this);
+            //AdUtils.loadFbInterAd(MyGalleryActivity.this,);
         }
 
     }

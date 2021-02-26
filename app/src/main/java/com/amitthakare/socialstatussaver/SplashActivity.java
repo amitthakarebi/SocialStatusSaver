@@ -21,6 +21,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         handleNotificationData();
+        SharedPref.makeSharedPreferences(this);
 
         spicon= findViewById(R.id.spicon);
         ((TextView) findViewById(R.id.txt)).setTypeface(LayManager.getTypeface(SplashActivity.this));

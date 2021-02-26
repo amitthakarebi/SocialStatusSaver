@@ -1,5 +1,6 @@
 package com.amitthakare.socialstatussaver;
 
+import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.google.android.material.tabs.TabLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -16,7 +17,6 @@ import android.widget.TextView;
 
 import com.amitthakare.socialstatussaver.fragment.FBHomeFragment;
 import com.amitthakare.socialstatussaver.fragment.UrlDownloadFragment;
-import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.LayManager;
 
 import java.util.ArrayList;
@@ -94,6 +94,7 @@ public class FBActivity extends AppCompatActivity {
             AdUtils.loadBannerAd(FBActivity.this, adContainer);
         } else {
             //Fb banner Ads
+            AdUtils.initFbAd(FBActivity.this);
             AdUtils.fbBannerAd(FBActivity.this, adContainer);
         }
 
