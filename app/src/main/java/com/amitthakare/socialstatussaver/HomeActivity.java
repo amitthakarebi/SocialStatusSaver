@@ -19,7 +19,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,14 +31,14 @@ import static android.view.View.*;
 
 public class HomeActivity extends AppCompatActivity implements OnClickListener {
 
-    RelativeLayout wsBtn;
-    RelativeLayout waBusiBtn;
-    RelativeLayout insBtn;
-    RelativeLayout tokBtn;
-    RelativeLayout likBtn;
-    RelativeLayout fbBtn;
-    RelativeLayout tweatBtn;
-    RelativeLayout galBtn;
+    LinearLayout wsBtn;
+    LinearLayout waBusiBtn;
+    LinearLayout insBtn;
+    LinearLayout tokBtn;
+    LinearLayout likBtn;
+    LinearLayout fbBtn;
+    LinearLayout tweatBtn;
+    LinearLayout galBtn;
     ImageView moreapp;
     ImageView policy;
     ImageView shareapp;
