@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Handler;
@@ -14,6 +15,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.amitthakare.socialstatussaver.model.Constants;
 import com.amitthakare.socialstatussaver.utils.AdUtils;
 import com.amitthakare.socialstatussaver.utils.Helpers;
 import com.amitthakare.socialstatussaver.utils.LayManager;
@@ -51,6 +54,8 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
         setContentView(R.layout.activity_home);
 
         init();
+
+        handleNotificationData();
 
         LinearLayout adContainer = findViewById(R.id.banner_container);
 
@@ -249,6 +254,53 @@ public class HomeActivity extends AppCompatActivity implements OnClickListener {
         if (requestCode == 21 && !checkPermissions(this, permissionsList)) {
                 ActivityCompat.requestPermissions(this, permissionsList, 21);
         }
+    }
+
+    private void handleNotificationData() {
+
+        if (Constants.datakey.equals("playstore") && Constants.isClicked.equals("Yes"))
+        {
+            final String appPackageName = Constants.datavalue;
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+            } catch (android.content.ActivityNotFoundException anfe) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+            }
+        }else if (Constants.datakey.equals("admob") && Constants.isClicked.equals("Yes"))
+        {
+            final String activeOrNot = Constants.datavalue;
+            Log.e("Handle Data", "Value : " + Constants.datavalue);
+            if (activeOrNot.equals("active"))
+            {
+                //admob active means AdUtils.isloadFbAd is false, show admob ads
+                AdUtils.isloadFbAd = false;
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("ads", 0); // 0 - for private mode
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("isLoadFbAd","false");
+                editor.apply();
+            }else
+            {
+                AdUtils.isloadFbAd = true;
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("ads", 0); // 0 - for private mode
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("isLoadFbAd","true");
+                editor.apply();
+            }
+        }
+
+        Constants.datavalue="No";
+        Constants.datakey="No";
+        Constants.isClicked="No";
+    }
+
+    // jevha main activity on asel tevha hai run hote
+    //this will be handle when the ap is already open and user click on the notification.
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.e("New Intent", "New Intent Called");
+        Constants.isClicked="Yes";
+        handleNotificationData();
     }
 
 }

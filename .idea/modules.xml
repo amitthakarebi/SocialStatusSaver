@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AllInOneStatusSaver.iml" filepath="$PROJECT_DIR$/.idea/modules/AllInOneStatusSaver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AllInOneStatusSaver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AllInOneStatusSaver.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SocialStatusSaver.iml" filepath="$PROJECT_DIR$/.idea/modules/SocialStatusSaver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SocialStatusSaver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SocialStatusSaver.app.iml" />
     </modules>
   </component>
 </project>
